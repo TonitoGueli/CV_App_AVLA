@@ -5,7 +5,7 @@ import com.tonito.curriculumwebapp.Model.Curriculum;
 import java.util.List;
 
 public interface CurriculumService {
-    Curriculum createCV(Curriculum curriculum);
     List<Curriculum> getAllCV();
-    Curriculum getCvByID (long id);
+    Curriculum updatedCV (Curriculum curriculum);
+    Curriculum getCvByName(String name);
 }

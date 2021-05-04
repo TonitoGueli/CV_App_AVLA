@@ -14,8 +14,7 @@ public class Candidato {
     @Column(name = "id")
     private long id;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_curriculum")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "candidato")
     private Curriculum curriculum;
 
     @Column(name = "email")
@@ -28,6 +27,11 @@ public class Candidato {
     private Date createdOn;
     @CreationTimestamp
     private Date updatedOn;
+
+    //Constructor vacío necesario para la creación.
+    public Candidato(){
+
+    }
 
     public Curriculum getCurriculum() {
         return curriculum;
